@@ -13,7 +13,7 @@
 #include<cstring>
 #include<vector>
 using namespace std;
-#define MAXN 1000010 
+#define MAXN 10010 
 vector<int> tree[MAXN];
 int fa[MAXN];
 int deep[MAXN];
