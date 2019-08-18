@@ -35,9 +35,14 @@ ll Lucas(ll k, ll b)
 int main()
 {
     fac[0] = 1;
+    int n=0;
+	cin>>n;
+	while(n--) 
+	{
     scanf("%lld%lld", &n, &m);
     for(int i=1; i<=p; ++i)
     fac[i] = fac[i-1] * i % p;
     printf("%lld\n", Lucas(n, m));
+	}
     return 0;
 }
