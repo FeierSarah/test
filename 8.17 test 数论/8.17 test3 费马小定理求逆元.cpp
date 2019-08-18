@@ -12,7 +12,18 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-typedef long long LL;
+typedef long long ll;
+ll Pow(ll a,ll b,ll mod)
+{
+  ll res=1;
+  while(b)
+  {
+    if(b&1) res=(res*a)%mod;
+    a=(a*a)%mod;
+    b>>=1;
+  }
+  return res;
+}
 int p = 19260817;
 int main()
 {
@@ -20,16 +31,9 @@ int main()
 	scanf("%d", &n);
 	while(n--)
 	{
-		LL x;
-		int X;
+		ll x;
 		scanf("%lld", &x);
-		X=(x%p);
-		for (int i = 1; i < p - 2; i++)
-		{
-			x *=X;
-			x = (x%p);
-		}
-		printf("%lld\n", x);
+		printf("%lld\n", Pow(x,p-2,p));
 	}
 	return 0;
 }
