@@ -1,12 +1,12 @@
-public class IdCard1 {
+class IdCard {
 	private String number;
 	private String birthday;
 	private boolean sex;//true男.false女
 	
-	public IdCard1(){
+	public IdCard(){
 		
 	}	
-	public IdCard1(String number, String birthday, boolean sex) {
+	public IdCard(String number, String birthday, boolean sex) {
 		this.number = number;
 		this.birthday = birthday;
 		this.sex = sex;
@@ -85,22 +85,21 @@ public class IdCard1 {
 		return String.format("[号码:%s,出生:%s,性别:%s]",number,birthday,sex ? '男' : '女');
 	}
 	public static void main(String[] args) {
-			System.out.println("请输入您要查询的身份证号码：");
-			IdCard1 id = new IdCard1();
-			String number = "360732199906090068";
-			id.setNumber (number);
-			if(id.checkNumber(number))
+		System.out.println("请输入您要查询的身份证号码：");
+		IdCard id = new IdCard();
+		String number = "360732199906090068";
+		id.setNumber (number);
+		if(id.checkNumber(number))
+		{
+			if(id.checkBirthDay(id.setBirthday(number)))
 			{
-				if(id.checkBirthDay(id.setBirthday(number)))
-				{
-					id.setSex(number);
-					System.out.println(id.toString());
-				}
-				else
-				    System.out.println("输入身份证号出生日期错误");
+				id.setSex(number);
+				System.out.println(id.toString());
 			}
 			else
-				System.out.println("输入身份证号错误");
-				
+				System.out.println("输入身份证号出生日期错误");
+		}
+		else
+			System.out.println("输入身份证号错误");		
 		}
 	}
