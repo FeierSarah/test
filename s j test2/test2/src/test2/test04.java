@@ -25,6 +25,16 @@ class MyInteger{
 		}
 		return false;
 	}
+	public boolean equals(int x) {
+		if(value == x)
+			return true;
+		else
+			return false;
+	}
+	public int parseInt(String x) {
+		int num = Integer.parseInt(x);
+		return num;
+	}
 }
 
 public class test04 {
@@ -33,5 +43,7 @@ public class test04 {
 		System.out.println(i1.isEven());
 		System.out.println(i1.isOdd());
 		System.out.println(i1.isPrime());
+		System.out.println(i1.equals(24));
+		System.out.println(i1.parseInt("123"));
 	}
 }
