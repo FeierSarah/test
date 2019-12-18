@@ -1,81 +1,64 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
-int sno = 0;
-class Student{
-    public:
-        const static int students = 10;
-        const static int classes = 8;
-        void SetName(int sno, string** sname)
-	    {
-	    	string name;
-	    	cin>>name;
-	  	    for(int i = 0; i < name.length(); i++)
-	  	    {
-	  	    	sname[sno][i] = name.at(i);
-			} 
-	    }
-	    void SetGrade(int cno, int sno, int** sgrade)
-	    {
-	    	int grade;
-	    	cin>>grade;
-	    	sgrade[sno][cno] = grade;
-		}
-	    void GetName(string** sname, int sno)
-	    {
-	    	cout<<"第"<<sno<<"位同学名字：";
-	    	for(int i = 0; i < sizeof(sname[sno]); i++)
-	  	    {
-	  	    	cout<<sname[sno][i];
-			} 
-			cout<<" ";
-	    }
-	    void GetGrade(int cno, int sno, int** sgrade)
-	    {
-	    	cout<<"科目"<<cno<<"成绩："<<sgrade[sno][cno]<<" "; 
-		}
-	private:
-	    int cno, sno, grade;
-	    string name;
-	    char **sname;
-	    int **sgrade;
-};
-void test()
+struct student//定义结构体 
 {
-	int choose;
-	int grade, cno;
-	    string name;
-	    char **sname;
-	    int **sgrade;
-	if(choose == 0)
+	int num;
+	char name[5];
+	int score[3];
+	double ave;
+}stu[5];
+int main() 
+{
+	int i, j, sum;
+	struct student temp;
+	for (i = 0; i < 5; i++)
 	{
-		Student::SetName(sno, sname);
-	    sno++;
-		for(int i = 0; i < 8; i++)
-		{
-			Student::SetGrade(i, sno, *sgrade);
-		}		
+		cout<<"输入第"<< i + 1 <<"个学生学号及姓名：  ";
+		cin >> stu[i].num;
+		cin >> stu[i].name;
+	    cout<<"输入三门课成绩： ";
+		cin >> stu[i].score[0] >> stu[i].score[1] >> stu[i].score[2];
+		sum = 0;
+		sum = stu[i].score[0] + stu[i].score[1] + stu[i].score[2];
+		stu[i].ave = sum / 3.0;
 	}
-	if(choose == 1)
+	for (i = 0; i < 5; i++)
 	{
-		for(int i = 0; i < sno; i++)
+		cout << stu[i].num << "  " << stu[i].name << "  " << stu[i].score[0] << "  "
+			<< stu[i].score[1] << "  " << stu[i].score[2] << "  " << stu[i].ave << endl;
+	}
+	cout << endl;
+	for (i = 5; i > 0; i--)
+	{
+		for (j = 0; j < i - 1; j++)
 		{
-			Student::GetName(*sname, sno);
-			for(int cno = 0; cno < 8; i++)
-		    {
-		    	Student::GetGrade(cno, sno, *sgrade);
-	    	}
+			if (stu[j].ave>stu[j + 1].ave)
+			{
+				temp = stu[j];
+				stu[j] = stu[j + 1];
+				stu[j + 1] = temp;
+			}
 		}
 	}
-	if(choose == 2)
+	for (i = 0; i < 5; i++)
 	{
-		int sno1, cno1;
-		cin>>sno1>>cno1;
-	    if((sno1 < sno) && (cno1 < 8))
-		  	Student::GetGrade(cno, sno, *sgrade);
-    }
-}
-int main()
-{
+		cout << stu[i].num << "  " << stu[i].name << "  " << stu[i].score[0] << "  "
+			<< stu[i].score[1] << "  " << stu[i].score[2] << "  " << stu[i].ave;
+		cout << endl;
+	}
+	cout << endl;
+	int flag;
+	cout << "输入要查找的学号： ";
+	cin >> flag;
+	for (i = 0; i < 5; i++)
+	{
+		if (stu[i].num == flag)
+		{
+			cout << stu[i].num << "  " << stu[i].name << "  " << stu[i].score[0] << "  "
+				 << stu[i].score[1] << "  " << stu[i].score[2] << "  " << stu[i].ave;
+		}
+	}
 	return 0;
 }
+
