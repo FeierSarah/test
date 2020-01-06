@@ -1,3 +1,4 @@
+package test1;
 //求三位数的水仙花数
 public class Shuixianhua {
 	public static void main(String[] args) {

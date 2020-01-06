@@ -1,3 +1,4 @@
+package test1;
 //求满足1！+2！+3！+ …+n!≤9999的最大整数n 
 public class Maxnum {
 	public static void main(String[] args) {

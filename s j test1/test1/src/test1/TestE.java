@@ -1,3 +1,4 @@
+package test1;
 //写出程序运行结果
 public class TestE {
 	public static void main(String[] args) {

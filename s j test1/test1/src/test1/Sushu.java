@@ -1,3 +1,4 @@
+package test1;
 //求1000以内的素数
 public class Sushu {
 	public static void main(String[] args) {

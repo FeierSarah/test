@@ -1,3 +1,4 @@
+package test1;
 //输出1000以内的完数
 public class Wanshu {
 	public static void main(String[] args) {
