@@ -3,8 +3,6 @@ package test2;
 import java.io.*;
 class Calendar {
 	private static int year;
-	private static int month;
-	private static int day;
 	private static String []months = {"Januray", "February", "March", "April", "May", "June", 
 			"July", "Augest", "September", "October", "November", "December"};
 	public Calendar() {
@@ -67,7 +65,6 @@ class Calendar {
 
 public class test08 {
 	public static void main(String[] args) throws IOException {
-		  Calendar a = new Calendar();
 		  Calendar.printmonth(2018);
 	}
 }
