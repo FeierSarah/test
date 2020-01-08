@@ -27,6 +27,7 @@ class RoundArea extends Area {
 }
 class ImpleArea{
 	public void test() {
+	@SuppressWarnings("resource")
 	Scanner in=new Scanner(System.in);
 	double h=in.nextDouble();
 	double w=in.nextDouble();

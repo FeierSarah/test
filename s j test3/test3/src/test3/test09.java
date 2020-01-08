@@ -1,5 +1,4 @@
 package test3;
-import java.util.*;
 
 class Animal{
 	public String type,voice;
