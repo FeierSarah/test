@@ -6,6 +6,7 @@ public class test05 {
 			char s1[]=new char[100];
 			char c=0;
 			int sum=0;
+			@SuppressWarnings("resource")
 			Scanner in=new Scanner(System.in);
 			s=in.next();
 			c=in.next().charAt(0);
