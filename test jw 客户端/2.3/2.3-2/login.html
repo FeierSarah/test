@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="css/1.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body margin-top:50px;" background="images/login_bg.gif" ;background-size="contain">
+		
+		<div>
+        <div style="width:900px; margin-left:20px;">
+            <table style="width:500px; float:left;margin-left:50px;">
+                <tr>
+                    <td>登录名：</td>
+ 
+                    <td><input id="Text1" type="text" />（可包含a-z、0-9和下划线）</td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input id="Text1" type="text" />（至少包含6个字符）</td>
+                </tr>
+                <tr>
+                    <td>再次输入密码：</td>
+                    <td><input id="Text1" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>电子邮箱：</td>
+                    <td><input id="Text1" type="text" />（必须包含@字符）</td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td>
+                        <input id="Radio1" type="radio" checked="checked" /><img src="images/Male.gif" alt="" />男
+                        <input id="Radio1" type="radio" /><img src="images/Female.gif" alt="" />女
+                    </td>
+ 
+                </tr>
+                <tr>
+                    <td>头像：</td>
+                    <td><input id="Text1" type="text" style="width:140px;" />
+                        <input  type="button" value="浏览" /></td>
+                </tr>
+                <tr>
+                    <td>爱好：</td>
+                    <td>
+                        <input id="Checkbox1" type="checkbox" />运动
+ 
+                        <input id="Checkbox1" type="checkbox" />聊天
+                        <input id="Checkbox1" type="checkbox" />玩游戏
+                    </td>
+                </tr>
+                <tr>
+                    <td>喜欢的城市：</td>
+                    <td><select  id="province" onchange="change( )" style="width:80px">
+                            <option>(请选择)</option>
+                                 </select> </td>
+                </tr>      
+                </tr>
+                <tr>
+                    <td><a href="#"><img src="images/submit.gif" alt="" /></a></td>
+                    <td><a href="#"><img src="images/reset.gif" alt="" /></a></td>
+                </tr>
+            </table>
+        </div >
+        <div style="float:right; width:500px;">
+            <table>
+                <tr>
+                    <td style="text-align:center;"><img src="images/read.gif" alt="" /><b>阅读贵美网服务协议</b></td>
+                </tr>
+                <tr>
+                    <td><textarea id="TextArea1" rows="14" cols="40">欢迎阅读服务条款协议</textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+	</body>
+</html>
