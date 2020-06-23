@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>图片悬浮</title>
+
+<style type="text/css">
+
+#da{ 
+
+	position:relative;/*设置父级元素，相对定位*/
+
+	}
+
+#tu,#dh { 
+
+	position:absolute;/*设置子元素绝对定位*/
+
+	}
+
+#dh{ /*设置文字盒子的样式*/
+
+	top:95px;	/*相对于父级元素，向下移10px*/
+
+	width:80px; /*设置文字盒子的宽度，这里设置其和图片宽度一致*/
+
+	height:30px;
+
+	line-height:30px;/*设置行高和高度一样，可以实现单行元素，在垂直方向上的居中*/
+
+	text-align:center;/*设置文字水平居中*/
+
+	background-color:#FFF;/*设置盒子背景颜色为白色*/
+
+	opacity:0.6;/*设置背景颜色透明度为0.6*/
+
+	}
+
+</style>
+
+</head>
+
+ 
+
+<body>
+
+<div id="da">
+
+  <div id="tu"><img src="images/h_bg.jpg" /></div>
+
+    <div id="dh">图片悬浮</div>
+
+</div>
+
+</body>
+
+</html>
