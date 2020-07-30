@@ -1,0 +1,37 @@
+#all{
+ margin: auto;
+ width: 300px;
+ height:300px;
+}
+.button{
+ width: 30px;
+ height: 20px;
+ border: 1px dashed #359CFF;
+ background: #FFE5E5;
+}
+#text{
+ width: 205px;
+ height: 15px;
+ border: 1px dashed #359CFF;
+ color: #FF6A6A;
+ background: #BBFFBF;
+}
+#zero{
+ width: 90px;
+ height: 20px;
+ border: 1px dashed #359CFF;
+ background: #FFE5E5;
+}
+.long{
+ width: 30px;
+ height: 65px;
+ border: 1px dashed #359CFF;
+ background: #FFE5E5;
+}
+#big div{
+ float: left;
+ width: 177px;
+}
+#big{
+ float: left;
+} 
