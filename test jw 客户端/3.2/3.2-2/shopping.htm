@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>简易购物车</title>
+<script type="text/javascript">
+/*弹出窗口*/
+window.onload=function quick_open(){
+  window.open("adv.html");
+  
+}
+/*全屏显示*/
+function full_screen(){
+	window.open("adv.html","广告窗口","fullscreen=yes");
+}
+/*弹出确认消息框*/
+function confirm_msg(){
+    if(confirm("确认提交数据")){
+	   alert("已经完成");
+	}
+}
+</script>
+<style type="text/css">
+#main{
+	margin-left: auto;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	width:700px;
+}
+td{text-align:center;
+font-size:14px;
+line-height:25px;}
+</style>
+</head>
+
+<body>
+<table width="600" border="1" cellspacing="0" cellpadding="0" id="main">
+ <form action="" method="post"><tr>
+    <td colspan="5" style="height:30; text-align:center; font-weight:bold; font-size:16px;">简易购物车</td>
+  </tr>
+  <tr>
+    <td>商品名称</td>
+    <td>数量（件）</td>
+    <td>单价（元）</td>
+    <td>运费（元）</td>
+    <td>合计（元）</td>
+  </tr>
+  <tr>
+    <td>诺基亚N95</td>
+    <td>1</td>
+    <td>2200</td>
+    <td>20</td>
+    <td>2400</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="height:35px;"><input type="button" name="btn" id="btn" value="提交定单"  onclick="confirm_msg()"/>&nbsp;&nbsp;&nbsp; <input name="fulls" type="button" value="全屏显示" onclick="full_screen()" /> </td>
+  </tr></form> 
+</table>
+</body>
+</html>
