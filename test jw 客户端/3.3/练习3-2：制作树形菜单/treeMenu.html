@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>制作树形菜单</title>
+<style type="text/css">
+body{font-size:13px;
+     line-height:20px;
+	 }
+a{font-size: 13px;
+  color: #000000;
+  text-decoration: none;
+  }
+a:hover{font-size:13px;
+       color: #ff0000;
+	   }
+img{
+	vertical-align: middle;
+	border:0;
+}
+.no_circle{
+   list-style:none;
+   display:none;
+}
+</style>
+<script  type="text/javascript">
+function show(d1){
+if(document.getElementById(d1).style.display=='block'){
+    document.getElementById(d1).style.display='none';  //触动的层如果处于显示状态，即隐藏
+ }
+else{
+	document.getElementById(d1).style.display='block';  //触动的层如果处于隐藏状态，即显示
+   }
+}
+</script>
+</head>
+
+<body>
+<b><img src="images/fold.gif">树形菜单：</b>  
+<ul><a href="javascript:onclick=show('art') "><img src="images/fclose.gif">文学艺术</a></ul>
+<ul id="art" class="no_circle">
+   <li><img src="images/doc.gif" >先锋写作</li>
+   <li><img src="images/doc.gif" >小说散文</li>
+   <li><img src="images/doc.gif" >诗风词韵</li>
+</ul>
+<ul><a href="javascript:onclick=show('photo') "><img src="images/fclose.gif">贴图专区</a></ul>
+<ul id="photo" class="no_circle">
+   <li><img src="images/doc.gif" >真我风采</li>
+   <li><img src="images/doc.gif" >视频贴图</li>
+   <li><img src="images/doc.gif" >行行摄摄</li>
+   <li><img src="images/doc.gif" >Flash贴图</li>
+</ul>
+<ul><a href="javascript:onclick=show('home') "><img src="images/fclose.gif">房产论坛</a></ul>
+<ul id="home" class="no_circle">
+   <li><img src="images/doc.gif" >我要买房</li>
+   <li><img src="images/doc.gif" >楼市话题</li>
+   <li><img src="images/doc.gif" >我要卖房</li>
+   <li><img src="images/doc.gif" >租房心语</li>
+   <li><img src="images/doc.gif" >二手市场</li>
+</ul>
+<ul><a href="javascript:onclick=show('game') "><img src="images/fclose.gif">娱乐八卦</a></ul>
+<ul id="game" class="no_circle">
+   <li><img src="images/doc.gif" >红楼一梦</li>
+   <li><img src="images/doc.gif" >笑话论坛</li>
+   <li><img src="images/doc.gif" >休闲生活</li>
+   <li><img src="images/doc.gif" >大话春秋</li>
+</ul>
+</body>
+</html>
