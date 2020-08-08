@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>修改订单</title>
+<style type="text/css">
+body{
+	font-size:13px;
+	line-height:25px;
+	}
+table{
+	border-top: 1px solid #333;
+	border-left: 1px solid #333;
+	width:400px;
+}
+td{
+	border-right: 1px solid #333;
+	border-bottom: 1px solid #333;
+	text-align:center;
+	}
+.title{	
+	font-weight:bold;
+	background-color: #cccccc;
+}
+input text{
+	width:100px;
+}
+      
+</style>
+<script type="text/javascript">
+
+function addRow(){
+   var addTable=document.getElementById("order");
+   var row_index=addTable.rows.length-1;       //新插入行在表格中的位置
+   var newRow=addTable.insertRow(row_index);  //插入新行
+   newRow.id="row"+row_index;                 //设置新插入行的ID
+   
+   var col1=newRow.insertCell(0);
+   col1.innerHTML="抗疲劳神奇钛项圈";
+   
+   var col2=newRow.insertCell(1);
+   col2.innerHTML=row_index;
+   
+   var col3=newRow.insertCell(2);
+   col3.innerHTML="&yen;49.00";
+   
+   var col4=newRow.insertCell(3);
+   col4.innerHTML="<input name='del"+row_index+"' type='button' value='删除' onclick=\"delRow('row"+row_index+ "')\" />&nbsp;<input id='edit"+row_index+"' type='button' value='修改' onclick=\"editRow('row"+row_index+ "')\" />";
+
+	}
+	
+function delRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   //删除行所在表格中的位置
+	document.getElementById("order").deleteRow(row); 
+	}
+	
+function editRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   //修改行所在表格中的位置
+	var col=document.getElementById(rowId).cells;
+	var text=col[1].innerHTML;
+	col[1].innerHTML="<input name='num"+row+"' style='width:40px;' type='text' value='"+text+"' />";
+	col[3].lastChild.value="确定";
+	col[3].lastChild.setAttribute("onclick","upRow('"+rowId+ "')");
+	
+	/*col[3].innerHTML="<input name='del"+row+"' type='button' value='删除' onclick=\"delRow('"+rowId+ "')\" />&nbsp;<input id='edit"+row+"' type='button' value='确定' onclick=\"upRow('"+rowId+ "')\" />"	*/
+	}
+	
+function upRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   //修改行所在表格中的位置
+	var col=document.getElementById(rowId).cells;
+	var text=col[1].firstChild.value;
+	col[1].innerHTML=text;
+	
+	col[3].lastChild.value="修改";
+	col[3].lastChild.setAttribute("onclick","editRow('"+rowId+ "')");
+
+
+/*col[3].innerHTML="<input name='del"+row+"' type='button' value='删除' onclick=\"delRow('"+rowId+ "')\" />&nbsp;<input id='edit"+row+"' type='button' value='修改' onclick=\"editRow('"+rowId+ "')\" />"*/	
+	
+	
+	}
+</script>
+</head>
+
+<body>
+<table border="0" cellspacing="0" cellpadding="0" id="order">
+  <tr class="title">
+    <td>商品名称</td>
+    <td>数量</td>
+    <td>价格</td>
+    <td>操作</td>
+  </tr>
+  <tr id="del1">
+    <td>防滑真皮休闲鞋</td>
+    <td>12</td>
+    <td>&yen;568.50</td>
+    <td><input name="rowdel" type="button" value="删除" onclick='delRow("del1")' />
+    <input id="edit1" type="button" value="修改" onclick='editRow("edit1")' /></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="height:30px;">
+    <input name="addOrder" type="button" value="增加订单" onclick="addRow()" /></td>
+  </tr>
+</table>
+</body>
+</html>
