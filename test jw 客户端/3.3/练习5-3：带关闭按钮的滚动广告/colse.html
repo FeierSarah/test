@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>带关闭按钮的滚动广告</title>
+<style type="text/css">
+#main{ text-align:center;}
+#float{
+	position:absolute;
+	left:30px;
+	top:60px; 
+	z-index:1;
+	}
+#close{
+	position:absolute;
+	top:60px;
+	left:134px;
+	z-index:2;
+	cursor:hand;
+}
+</style>
+<script type="text/javascript">
+function adv_close(){ //可以通过style属性赋值，但只能获取内联样式
+	document.getElementById("close").style.display="none"; 
+	document.getElementById("float").style.display="none";
+}
+var closeTop;
+var closeLeft;
+var floatTop;
+var flostLeft;
+var closeObject;
+var floatObject;
+function place(){
+	closeObject=document.getElementById("close");
+	floatObject=document.getElementById("float");
+	if(closeObject.currentStyle){//IE浏览器支持currentStyle属性，它是只读的，不能通过它赋值
+       closeTop=parseInt(closeObject.currentStyle.top);
+       closeLeft=parseInt(closeObject.currentStyle.left);
+       floatTop=parseInt(floatObject.currentStyle.top);
+       floatLeft=parseInt(floatObject.currentStyle.left);
+   }
+   else{//fireFox浏览器支持、DOM支持document.defaultView.getComputedStyle，IE不支持
+	   closeTop=parseInt(document.defaultView.getComputedStyle(closeObject,null).top);
+       closeLeft=parseInt(document.defaultView.getComputedStyle(closeObject,null).left);
+       floatTop=parseInt(document.defaultView.getComputedStyle(floatObject,null).top);
+       floatLeft=parseInt(document.defaultView.getComputedStyle(floatObject,null).left);
+	}
+}
+function roll(){
+	//scrollTop：对象最顶端和窗口中可见内容最顶端之间的距离，即元素在垂直方向上滚动的距离
+	//scrollLeft:对象最左边界和窗口中可见内容最左端之间的距离，即元素在水平方向上滚动的距离
+	closeObject.style.top=closeTop+parseInt(document.documentElement.scrollTop)+"px";
+    closeObject.style.left=closeLeft+parseInt(document.documentElement.scrollLeft)+"px";
+	floatObject.style.top=floatTop+parseInt(document.documentElement.scrollTop)+"px";
+    floatObject.style.left=floatLeft+parseInt(document.documentElement.scrollLeft)+"px";
+}
+window.onload=place;
+window.onscroll=roll;
+
+</script>
+</head>
+<body>
+<div id="close" onClick="adv_close()"><img src="images/close.jpg"></div>
+<div id="float"><img src="images/advpic.jpg"></div>
+<div id="main"><img src="images/contentpic.jpg"></div>
+</body>
+</html>
