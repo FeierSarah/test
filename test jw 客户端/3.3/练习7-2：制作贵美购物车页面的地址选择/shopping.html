@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>贵美购物车页面</title>
+ <link rel="stylesheet"	type="text/css"	href="css/global.css"	/>
+ <link rel="stylesheet"	type="text/css"	href="css/layout.css"	/>
+ <style type="text/css">
+ .buyleft{
+	 width:150px;
+	 height:30px;
+	 text-align:right;
+	 font-size:14px;
+ }
+ </style>
+</head>
+
+<body>
+<div id="container">
+  <iframe id="head" runat="server" src="head.htm" width="980px" height="136px" frameborder="0" scrolling="no"></iframe>
+  <img src="images/top.jpg" alt="top" />
+ 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <form action="" method="post" name="myform"><tr>
+        <td class="buyleft">收件人：</td>
+        <td><input type="text" name="username" id="username"</td>
+      </tr>
+      <tr>
+        <td class="buyleft">地址： </td>
+        <td><select  id="province" onchange="change( )" style="width:100px">
+        <option>--选择省份--</option>
+      </select>
+      <select  id="city"  style="width:100px">
+             <option>--选择市/区--</option>
+             </select>
+  			</td>
+      </tr>      
+      <tr>
+        <td>&nbsp;</td>
+        <td style="height:40px;"><input type="image" src="images/submit.gif" style="border:0px;" /></td>
+      </tr></form>
+</table>
+
+  
+  <iframe id="foot" runat="server" src="foot.htm" width="980px" height="150px" frameborder="0" scrolling="no"></iframe>
+</div>
+<script type="text/javascript">
+var cityList = new Array();
+     cityList['北京市'] = ['朝阳区','东城区','西城区', '海淀区','宣武区','丰台区','怀柔','延庆','房山'];
+	 cityList['上海市'] = ['宝山区','长宁区','丰贤区', '虹口区','黄浦区','青浦区','南汇区','徐汇区','卢湾区'];
+	 cityList['广州省'] = ['广州市','惠州市','汕头市','珠海市','佛山市','中山市','东莞市'];
+     cityList['深圳市'] = ['福田区', '罗湖区', '盐田区', '宝安区', '龙岗区', '南山区', '深圳周边'];
+	 cityList['重庆市'] = ['俞中区', '南岸区', '江北区', '沙坪坝区', '九龙坡区', '渝北区', '大渡口区', '北碚区'];
+     cityList['天津市'] = ['和平区', '河西区', '南开区', '河北区', '河东区', '红桥区', '塘古区', '开发区'];
+	 cityList['江苏省'] = ['南京市','苏州市','无锡市'];
+	 cityList['浙江省'] = ['杭州市','宁波市','温州市'];
+	 cityList['四川省'] = ['四川省','成都市'];
+	 cityList['海南省'] = ['海口市'];
+	 cityList['福建省'] = ['福州市','厦门市','泉州市','漳州市'];
+	 cityList['山东省'] = ['济南市','青岛市','烟台市'];
+	 cityList['江西省'] = ['江西省','南昌市'];
+	 cityList['广西省'] = ['柳州市','南宁市'];
+	 cityList['安徽省'] = ['安徽省','合肥市'];
+	 cityList['河北省'] = ['邯郸市','石家庄市'];
+	 cityList['河南省'] = ['郑州市','洛阳市'];
+	 cityList['湖北省'] = ['武汉市','宜昌市'];
+	 cityList['湖南省'] = ['湖南省','长沙市'];
+	 cityList['陕西省'] = ['陕西省','西安市'];
+	 cityList['山西省'] = ['山西省','太原市'];
+	 cityList['黑龙江省'] = ['黑龙江省','哈尔滨市'];
+	 cityList['其他'] = ['其他'];
+	 
+  function change(){
+     var province=document.getElementById("province").value; 
+	 var city=document.getElementById("city");
+	 city.options.length=0; //清除当前city中的选项
+	for (var i in cityList){
+	        if (i == province){
+                for (var j in cityList[i]){
+					city.add(new Option(cityList[i][j],cityList[i][j]),null);
+                }
+            }
+       }
+  } 
+  function allCity(){
+	  var province=document.getElementById("province");
+      for (var i in cityList){
+		 province.add(new Option(i, i),null); 
+		}	
+  }
+    window.onload=allCity;
+</script>
+</body>
+</html>
